@@ -51,6 +51,7 @@
         <property name="hbm2ddl.auto">create</property>
 
         <mapping class="net.viralpatel.hibernate.Employee"/>
+        <mapping class="fr.prunetwork.place.pojo.Author"/>
 
     </session-factory>
 </hibernate-configuration>

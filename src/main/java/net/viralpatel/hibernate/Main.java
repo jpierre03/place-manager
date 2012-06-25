@@ -1,5 +1,6 @@
 package net.viralpatel.hibernate;
 
+import fr.prunetwork.place.pojo.Author;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
@@ -20,9 +21,13 @@ public class Main {
         Long id = (Long) session.save(new Employee("Jack", "Bauer", new Date(444), "911"));
         //employee.setId(id);
 
+
+        session.save(new Author("Jean-Pierre"));
         session.getTransaction().commit();
 
         session.close();
+
+
 //        // Write
 //        System.out.println("******* WRITE *******");
 //        Employee empl = new Employee("Jack", "Bauer", new Date(System.currentTimeMillis()), "911");
