@@ -1,6 +1,6 @@
 package jgravatar;
 
-public class GravatarDownloadException extends RuntimeException {
+public final class GravatarDownloadException extends RuntimeException {
 
 	private static final long serialVersionUID = 1L;
 
