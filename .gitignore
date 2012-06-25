@@ -4,3 +4,6 @@
 
 # KDE
 .directory
+
+bin
+.DS_Store
