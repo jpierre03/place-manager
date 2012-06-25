@@ -53,6 +53,7 @@
         <mapping class="net.viralpatel.hibernate.Employee"/>
         <mapping class="fr.prunetwork.place.pojo.Author"/>
         <mapping class="fr.prunetwork.place.pojo.Comment"/>
+        <mapping class="fr.prunetwork.place.pojo.Mail"/>
         <mapping class="fr.prunetwork.place.pojo.Place"/>
         <mapping class="fr.prunetwork.place.pojo.PlaceCategory"/>
 

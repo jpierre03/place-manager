@@ -1,9 +1,6 @@
 package net.viralpatel.hibernate;
 
-import fr.prunetwork.place.pojo.Author;
-import fr.prunetwork.place.pojo.Comment;
-import fr.prunetwork.place.pojo.Place;
-import fr.prunetwork.place.pojo.PlaceCategory;
+import fr.prunetwork.place.pojo.*;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
@@ -18,7 +15,10 @@ public class Main {
 
         session.beginTransaction();
 
-        Author jp = new Author("Jean-Pierre");
+        Mail mail=new Mail("places@spam.prunetwork.fr");
+        session.save(mail);
+
+        Author jp = new Author("Jean-Pierre", mail);
         session.save(jp);
 
         PlaceCategory cinema = new PlaceCategory("Cinema");

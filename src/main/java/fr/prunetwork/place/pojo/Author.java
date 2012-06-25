@@ -17,9 +17,15 @@ public class Author {
     @Column (name = "author_name", nullable = false)
     private String name;
 
-    public Author(String name) {
+    @ManyToOne
+    @JoinColumn (name = "mail_id")
+    private Mail mail;
+
+    public Author(String name, Mail mail) {
         assert (name != null);
+        assert (mail != null);
         this.name = name;
+        this.mail = mail;
     }
 
     public String getName() {
