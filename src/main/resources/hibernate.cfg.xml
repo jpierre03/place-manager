@@ -2,7 +2,7 @@
 <!DOCTYPE hibernate-configuration PUBLIC
         "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
         "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
- 
+
 <hibernate-configuration>
     <session-factory>
         <!-- Database connection settings -->
@@ -42,14 +42,15 @@
 
         <!-- Disable the second-level cache  -->
         <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
-        
+
         <!-- Echo all executed SQL to stdout -->
-        <property name="show_sql">false</property>
-        
-        <property name="hbm2ddl.auto">validate</property>
- 
- 		<mapping class="net.viralpatel.hibernate.Employee"/>
- 		
- 		 
+        <property name="show_sql">true</property>
+
+        <!--<property name="hbm2ddl.auto">validate</property>-->
+        <!--<property name="hbm2ddl.auto">update</property>-->
+        <property name="hbm2ddl.auto">create</property>
+
+        <mapping class="net.viralpatel.hibernate.Employee"/>
+
     </session-factory>
 </hibernate-configuration>
