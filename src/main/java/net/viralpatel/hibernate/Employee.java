@@ -12,29 +12,29 @@ public class Employee {
 	@GeneratedValue
     @Column(name="employee_id")
 	private Long id;
-	
+
 	@Column(name="firstname")
 	private String firstname;
-	
+
 	@Column(name="lastname")
 	private String lastname;
-	
+
 	@Column(name="birth_date")
 	private Date birthDate;
-	
+
 	@Column(name="cell_phone")
 	private String cellphone;
 
 	public Employee() {
-		
+
 	}
-	
+
 	public Employee(String firstname, String lastname, Date birthdate, String phone) {
 		this.firstname = firstname;
 		this.lastname = lastname;
 		this.birthDate = birthdate;
 		this.cellphone = phone;
-		
+
 	}
 	public Long getId() {
 		return id;
@@ -75,5 +75,5 @@ public class Employee {
 	public void setCellphone(String cellphone) {
 		this.cellphone = cellphone;
 	}
-	
+
 }
