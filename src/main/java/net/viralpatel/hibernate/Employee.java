@@ -10,6 +10,7 @@ public class Employee {
 
 	@Id
 	@GeneratedValue
+    @Column(name="employee_id")
 	private Long id;
 	
 	@Column(name="firstname")
