@@ -40,36 +40,36 @@ public class Employee {
 		return id;
 	}
 
-	public String getFirstname() {
-		return firstname;
-	}
-
-	public String getLastname() {
-		return lastname;
-	}
-
-	public Date getBirthDate() {
-		return birthDate;
-	}
-
-	public String getCellphone() {
-		return cellphone;
-	}
-
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public String getFirstname() {
+		return firstname;
 	}
 
 	public void setFirstname(String firstname) {
 		this.firstname = firstname;
 	}
 
+	public String getLastname() {
+		return lastname;
+	}
+
 	public void setLastname(String lastname) {
 		this.lastname = lastname;
 	}
 
+	public Date getBirthDate() {
+		return birthDate;
+	}
+
 	public void setBirthDate(Date birthDate) {
 		this.birthDate = birthDate;
+	}
+
+	public String getCellphone() {
+		return cellphone;
 	}
 
 	public void setCellphone(String cellphone) {
