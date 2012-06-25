@@ -17,7 +17,7 @@ public class Main {
 
         session.beginTransaction();
 
-        Long id = (Long) session.save(new Employee("Jack","Bauer",new Date(444), "911"));
+        Long id = (Long) session.save(new Employee("Jack", "Bauer", new Date(444), "911"));
         //employee.setId(id);
 
         session.getTransaction().commit();
