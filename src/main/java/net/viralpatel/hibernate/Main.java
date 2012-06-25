@@ -16,13 +16,13 @@ public class Main {
         session.beginTransaction();
 
         Mail mail = new Mail("places@spam.prunetwork.fr");
-        session.save(mail);
+        session.saveOrUpdate(mail);
 
         Author jp = new Author("Jean-Pierre", mail);
-        session.save(jp);
+        session.saveOrUpdate(jp);
 
         Category cinema = new Category("Cinema");
-        session.save(cinema);
+        session.saveOrUpdate(cinema);
 
         Place place = new Place("Pathé Plan de Campagne", jp, cinema);
         session.saveOrUpdate(place);
