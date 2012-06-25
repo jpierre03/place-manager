@@ -55,7 +55,7 @@
         <mapping class="fr.prunetwork.place.pojo.Comment"/>
         <mapping class="fr.prunetwork.place.pojo.Mail"/>
         <mapping class="fr.prunetwork.place.pojo.Place"/>
-        <mapping class="fr.prunetwork.place.pojo.PlaceCategory"/>
+        <mapping class="fr.prunetwork.place.pojo.Category"/>
 
     </session-factory>
 </hibernate-configuration>

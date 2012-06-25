@@ -15,14 +15,18 @@ public class Main {
 
         session.beginTransaction();
 
-        Mail mail=new Mail("places@spam.prunetwork.fr");
+        Mail mail = new Mail("places@spam.prunetwork.fr");
         session.save(mail);
 
         Author jp = new Author("Jean-Pierre", mail);
         session.save(jp);
 
-        PlaceCategory cinema = new PlaceCategory("Cinema");
+        Category cinema = new Category("Cinema");
         session.save(cinema);
+
+        Place place = new Place("Pathé Plan de Campagne", jp, cinema);
+        session.saveOrUpdate(place);
+
 
         Comment comment1 = new Comment("Il est super");
         session.saveOrUpdate(comment1);
@@ -32,9 +36,6 @@ public class Main {
 
         Comment comment3 = new Comment("Il est super bien");
         session.saveOrUpdate(comment3);
-
-        Place place = new Place("Pathé Plan de Campagne", jp, cinema);
-        session.saveOrUpdate(place);
 
         place.addComment(comment1);
         place.addComment(comment2);

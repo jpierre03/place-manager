@@ -7,17 +7,17 @@ import javax.persistence.*;
  *         Date: 25/06/12 21:12
  */
 @Entity
-@Table (name = "PLACE_CATEGORY")
-public class PlaceCategory {
+@Table (name = "CATEGORY")
+public class Category {
     @Id
     @GeneratedValue
-    @Column (name = "place_category_id", nullable = false)
+    @Column (name = "category_id", nullable = false)
     private Long id;
 
-    @Column (name = "place_category_name", nullable = false)
+    @Column (name = "category_name", nullable = false)
     private String name;
 
-    public PlaceCategory(String name) {
+    public Category(String name) {
         assert (name != null);
         this.name = name;
     }

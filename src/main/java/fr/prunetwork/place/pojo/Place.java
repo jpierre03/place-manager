@@ -19,13 +19,13 @@ public class Place {
     @Column (name = "place_name", nullable = false)
     private String name;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn (name = "author_id", nullable = false)
     private Author author;
 
-    @ManyToOne
-    @JoinColumn (name = "place_category_id", nullable = false)
-    private PlaceCategory placeCategory;
+    @OneToOne
+    @JoinColumn (name = "category_id", nullable = false)
+    private Category category;
 
     @ManyToMany
     @JoinColumn (name = "comment_id", nullable = false)
@@ -35,14 +35,14 @@ public class Place {
     public Place() {
     }
 
-    public Place(String name, Author author, PlaceCategory placeCategory) {
+    public Place(String name, Author author, Category category) {
         assert (name != null);
         assert (author != null);
-        assert (placeCategory != null);
+        assert (category != null);
 
         this.name = name;
         this.author = author;
-        this.placeCategory = placeCategory;
+        this.category = category;
         this.comments = new HashSet<Comment>();
     }
 
@@ -72,12 +72,12 @@ public class Place {
         this.author = author;
     }
 
-    public PlaceCategory getPlaceCategory() {
-        return placeCategory;
+    public Category getCategory() {
+        return category;
     }
 
-    public void setPlaceCategory(PlaceCategory placeCategory) {
-        this.placeCategory = placeCategory;
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
     public Set<Comment> getComments() {
