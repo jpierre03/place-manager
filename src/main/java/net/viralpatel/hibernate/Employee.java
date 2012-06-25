@@ -5,7 +5,7 @@ import java.sql.Date;
 
 
 @Entity
-@Table(name="EMPLOYEE")
+@Table(name="Employee")
 public class Employee {
 
 	@Id
