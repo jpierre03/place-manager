@@ -1,6 +1,7 @@
 package net.viralpatel.hibernate;
 
 import fr.prunetwork.place.pojo.Author;
+import fr.prunetwork.place.pojo.Comment;
 import fr.prunetwork.place.pojo.Place;
 import fr.prunetwork.place.pojo.PlaceCategory;
 import org.hibernate.Session;
@@ -12,15 +13,10 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-
-
         SessionFactory sf = HibernateUtil.getSessionFactory();
         Session session = sf.openSession();
 
         session.beginTransaction();
-
-//        Long id = (Long) session.save(new Employee("Jack", "Bauer", new Date(444), "911"));
-        //employee.setId(id);
 
         Author jp = new Author("Jean-Pierre");
         session.save(jp);
@@ -28,7 +24,23 @@ public class Main {
         PlaceCategory cinema = new PlaceCategory("Cinema");
         session.save(cinema);
 
-        session.save(new Place("Pathé Plan de Campagne", jp, cinema));
+        Comment comment1 = new Comment("Il est super");
+        session.saveOrUpdate(comment1);
+
+        Comment comment2 = new Comment("Il est super");
+        session.saveOrUpdate(comment2);
+
+        Comment comment3 = new Comment("Il est super bien");
+        session.saveOrUpdate(comment3);
+
+        Place place = new Place("Pathé Plan de Campagne", jp, cinema);
+        session.saveOrUpdate(place);
+
+        place.addComment(comment1);
+        place.addComment(comment2);
+        place.addComment(comment3);
+        session.saveOrUpdate(place);
+
 
         session.getTransaction().commit();
 

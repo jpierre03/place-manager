@@ -1,6 +1,8 @@
 package fr.prunetwork.place.pojo;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * @author Jean-Pierre PRUNARET
@@ -25,6 +27,11 @@ public class Place {
     @JoinColumn (name = "place_category_id", nullable = false)
     private PlaceCategory placeCategory;
 
+    @ManyToMany
+    @JoinColumn (name = "comment_id", nullable = false)
+    private Set<Comment> comments;
+
+
     public Place() {
     }
 
@@ -36,6 +43,7 @@ public class Place {
         this.name = name;
         this.author = author;
         this.placeCategory = placeCategory;
+        this.comments = new HashSet<Comment>();
     }
 
     public Long getId() {
@@ -70,5 +78,24 @@ public class Place {
 
     public void setPlaceCategory(PlaceCategory placeCategory) {
         this.placeCategory = placeCategory;
+    }
+
+    public Set<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(Set<Comment> comments) {
+        assert (comments != null);
+        assert (!comments.isEmpty());
+        assert (comments.size() > 0);
+
+        this.comments = comments;
+    }
+
+    public void addComment(Comment comment) {
+        assert (comment != null);
+        assert (comments != null);
+
+        comments.add(comment);
     }
 }
