@@ -1,10 +1,11 @@
 package net.viralpatel.hibernate;
 
 import fr.prunetwork.place.pojo.Author;
+import fr.prunetwork.place.pojo.Place;
+import fr.prunetwork.place.pojo.PlaceCategory;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-import java.sql.Date;
 import java.util.List;
 
 
@@ -18,11 +19,17 @@ public class Main {
 
         session.beginTransaction();
 
-        Long id = (Long) session.save(new Employee("Jack", "Bauer", new Date(444), "911"));
+//        Long id = (Long) session.save(new Employee("Jack", "Bauer", new Date(444), "911"));
         //employee.setId(id);
 
+        Author jp = new Author("Jean-Pierre");
+        session.save(jp);
 
-        session.save(new Author("Jean-Pierre"));
+        PlaceCategory cinema = new PlaceCategory("Cinema");
+        session.save(cinema);
+
+        session.save(new Place("Pathé Plan de Campagne", jp, cinema));
+
         session.getTransaction().commit();
 
         session.close();

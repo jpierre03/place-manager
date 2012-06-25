@@ -52,6 +52,8 @@
 
         <mapping class="net.viralpatel.hibernate.Employee"/>
         <mapping class="fr.prunetwork.place.pojo.Author"/>
+        <mapping class="fr.prunetwork.place.pojo.Place"/>
+        <mapping class="fr.prunetwork.place.pojo.PlaceCategory"/>
 
     </session-factory>
 </hibernate-configuration>
