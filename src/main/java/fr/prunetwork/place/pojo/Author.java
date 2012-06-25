@@ -27,6 +27,7 @@ public class Author {
     }
 
     public void setName(String name) {
+        assert (name != null);
         this.name = name;
     }
 
@@ -35,6 +36,7 @@ public class Author {
     }
 
     public void setId(Long id) {
+        assert (id != null);
         this.id = id;
     }
 }
