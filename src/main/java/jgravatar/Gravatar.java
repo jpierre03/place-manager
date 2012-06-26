@@ -34,7 +34,9 @@ public final class Gravatar {
     private final static int DEFAULT_SIZE = 80;
     private final static String GRAVATAR_URL = "http://www.gravatar.com/avatar/";
     private static final GravatarRating DEFAULT_RATING = GravatarRating.GENERAL_AUDIENCES;
-    private static final GravatarDefaultImage DEFAULT_DEFAULT_IMAGE = GravatarDefaultImage.HTTP_404;
+    //private static final GravatarDefaultImage DEFAULT_DEFAULT_IMAGE = GravatarDefaultImage.HTTP_404;
+//    private static final GravatarDefaultImage DEFAULT_DEFAULT_IMAGE = GravatarDefaultImage.WAVATAR;
+    private static final GravatarDefaultImage DEFAULT_DEFAULT_IMAGE = GravatarDefaultImage.IDENTICON;
 
     private int size = DEFAULT_SIZE;
     private GravatarRating rating = DEFAULT_RATING;
