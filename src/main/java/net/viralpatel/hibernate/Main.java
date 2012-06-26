@@ -83,7 +83,6 @@ public class Main {
 //        System.out.println("Object:" + empl3);
     }
 
-
     private static List list() {
         SessionFactory sf = HibernateUtil.getSessionFactory();
         Session session = sf.openSession();
@@ -145,5 +144,4 @@ public class Main {
 
         session.close();
     }
-
 }
